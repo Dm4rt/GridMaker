@@ -134,3 +134,8 @@ function fillAll(){
 	}
 }
 
+//Clear color of all cells
+function clearAll(){
+
+}
+
