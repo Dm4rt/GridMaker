@@ -55,12 +55,15 @@ function removeRow(){
 	let lastChild = grid.lastChild;
 	grid.removeChild(lastChild);
 	//Special case where last row emptys grid on remove
-	if(gridRows == 1){
-		for(let r=gridCols;r>1;r--){
-			removeCol();
-		}
+	//Basically replace grid with empty one
+	if(gridRows == 1 ){ 
+		grid.innerHTML= '';
+		gridRows=0;
+		gridCols=0;
 	}
-	gridRows--;
+	else{
+		gridRows--;
+	}
 	console.log(gridRows, gridCols);
 }
 
@@ -79,11 +82,13 @@ function removeCol(){
 		}
 	}
 	//Special case where last column emptys grid on remove
-	if(gridCols == 1){
-		for(let r=gridRows;r>0;r--){
-			removeRow();
-		}
+	if(gridCols == 1 ){ 
+		grid.innerHTML= '';
+		gridRows=0;
+		gridCols=0;
 	}
-	gridCols--;
+	else{
+		gridCols--;
+	}
 	console.log(gridRows, gridCols);
 }
