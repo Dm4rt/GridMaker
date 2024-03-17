@@ -27,15 +27,17 @@ function addRow() {
 }
 
 //add column
-function addColumn() {
+function addCol(){
 	//Special case where no rows yet
 	if(gridRows==0){
 		addRow();
 		return;
 	}
-	let grid = getElementById("grid");
-	for(let x=0;x<gridRows;x++){
-		insertCell(grid.children[x]);
+	else{
+		let grid = document.getElementById("grid");
+		for(let x=0;x<gridRows;x++){
+			insertCell(grid.children[x]);
+		}
 	}
 	gridCols++;
 	console.log(gridRows, gridCols);
