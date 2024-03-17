@@ -43,6 +43,7 @@ function addCol(){
 	console.log(gridRows, gridCols);
 		
 }
+
 //Removes a row
 function removeRow(){
 	//Special case where no rows 
@@ -53,6 +54,41 @@ function removeRow(){
 	let grid = document.getElementById("grid");
 	let lastChild = grid.lastChild;
 	grid.removeChild(lastChild);
-	gridRows--;
+	//Special case where last row emptys grid on remove
+	//Basically replace grid with empty one
+	if(gridRows == 1 ){ 
+		grid.innerHTML= '';
+		gridRows=0;
+		gridCols=0;
+	}
+	else{
+		gridRows--;
+	}
+	console.log(gridRows, gridCols);
+}
+
+//Removes a col
+function removeCol(){
+	//Special Case where no rows
+	if(gridRows == 0){
+		return;
+	}
+	let grid = document.getElementById("grid");
+	for(let x=0;x<gridRows;x++){
+		let row =grid.children[x];
+		//we basically remove the last cell from each row
+		if(row.children.length >0){
+			row.removeChild(row.lastChild);
+		}
+	}
+	//Special case where last column emptys grid on remove
+	if(gridCols == 1 ){ 
+		grid.innerHTML= '';
+		gridRows=0;
+		gridCols=0;
+	}
+	else{
+		gridCols--;
+	}
 	console.log(gridRows, gridCols);
 }
