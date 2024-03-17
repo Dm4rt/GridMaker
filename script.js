@@ -60,5 +60,8 @@ function removeRow(){
 
 //Removes a col
 function removeCol(){
-
+	//Special Case where no rows
+	if(gridRows == 0;){
+	
+	}
 }
