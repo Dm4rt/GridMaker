@@ -2,8 +2,8 @@
 let gridRows = 0;
 let gridCols = 0;
 
-//insert cell
-function insertCell(input){
+//add cell 
+function addCell(input){
 	let td = document.createElement("td");
 	input.appendChild(td);
 }
@@ -13,12 +13,12 @@ function addRow() {
 	let row = document.createElement("tr");
 	//Special case where no cols yet
 	if(gridCols<=0){
-		insertCell(row);
+		addCell(row);
 		gridCols++;
 	}
 	else{
 		for(let x=0;x<gridCols;x++){
-			insertCell(row);
+			addCell(row);
 		}
 	}
 	document.getElementById("grid").appendChild(row);
@@ -36,7 +36,7 @@ function addCol(){
 	else{
 		let grid = document.getElementById("grid");
 		for(let x=0;x<gridRows;x++){
-			insertCell(grid.children[x]);
+			addCell(grid.children[x]);
 		}
 	}
 	gridCols++;
@@ -45,5 +45,14 @@ function addCol(){
 }
 //Removes a row
 function removeRow(){
-	
+	//Special case where no rows 
+	if(gridRows == 0 ){
+		return;
+	}
+	//Get grid and the last child
+	let grid = document.getElementById("grid");
+	let lastChild = grid.lastChild;
+	grid.removeChild(lastChild);
+	gridRows--;
+	console.log(gridRows, gridCols);
 }
