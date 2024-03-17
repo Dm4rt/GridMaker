@@ -121,3 +121,16 @@ function fillEmpty(){
 	}
 }
 
+//Color all cells
+function fillAll(){
+	let grid = document.getElementById("grid");
+	//Same as last function, we will iterate through grid
+	for(let x=0;x<grid.rows.length;x++){
+		let curRow=grid.rows[x];
+		for(let y=0;y<curRow.cells.length;y++){
+			let curCell = curRow.cells[y];
+			curCell.style.backgroundColor = gridColor;
+		}
+	}
+}
+
