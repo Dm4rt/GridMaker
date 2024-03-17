@@ -121,3 +121,8 @@ function fillEmpty(){
 	}
 }
 
+//Color all cells
+function fillAll(){
+
+}
+
