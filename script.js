@@ -1,6 +1,7 @@
 //Global Vars
 let gridRows = 0;
 let gridCols = 0;
+let gridColor;
 
 //add cell 
 function addCell(input){
@@ -91,4 +92,11 @@ function removeCol(){
 		gridCols--;
 	}
 	console.log(gridRows, gridCols);
+}
+
+//update current grid color
+function setGridColor(){
+	//we get the value selected from the dropdown menu
+	gridColor = document.getElementById("colorMenu").value;
+	console.log("Grid Color:", gridColor);
 }
