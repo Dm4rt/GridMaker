@@ -1,11 +1,15 @@
 //Global Vars
 let gridRows = 0;
 let gridCols = 0;
-let gridColor;
+let gridColor = "White";
 
 //add cell 
 function addCell(input){
 	let td = document.createElement("td");
+	//add onclick event handler where the backgroud is updated on click
+	td.onclick = function(){
+		td.style.backgroundColor = gridColor;
+	}
 	input.appendChild(td);
 }
 
@@ -100,3 +104,4 @@ function setGridColor(){
 	gridColor = document.getElementById("colorMenu").value;
 	console.log("Grid Color:", gridColor);
 }
+
