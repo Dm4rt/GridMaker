@@ -5,7 +5,6 @@ let gridCols = 0;
 //insert cell
 function insertCell(input){
 	let td = document.createElement("td");
-	
 	input.appendChild(td);
 }
 
