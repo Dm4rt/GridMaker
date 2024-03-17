@@ -105,3 +105,19 @@ function setGridColor(){
 	console.log("Grid Color:", gridColor);
 }
 
+//Color all uncolored cells
+function fillEmpty(){
+	let grid = document.getElementById("grid");
+	//we will iterate through grid and find empty cells
+	for(let x=0;x<grid.rows.length;x++){
+		let curRow=grid.row[x];
+		for(let y=0;y<curRow.cells.length;y++){
+			let curCell = curRow.cells[y];
+			//Check if a cell has no color
+			if(curCell.style.backgroundColor == ''){
+				curCell.style.backgroundColor = gridColor;
+			}
+		}
+	}
+}
+
