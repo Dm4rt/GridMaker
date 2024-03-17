@@ -136,6 +136,15 @@ function fillAll(){
 
 //Clear color of all cells
 function clearAll(){
-
+	let grid = document.getElementById("grid");
+	//Again, same as last function, we will iterate through grid
+	for(let x=0;x<grid.rows.length;x++){
+		let curRow=grid.rows[x];
+		for(let y=0;y<curRow.cells.length;y++){
+			let curCell = curRow.cells[y];
+			//Instead of setting to current color, set to original blank
+			curCell.style.backgroundColor = '';
+		}
+	}
 }
 
