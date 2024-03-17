@@ -43,3 +43,7 @@ function addCol(){
 	console.log(gridRows, gridCols);
 		
 }
+//Removes a row
+function removeRow(){
+	
+}
