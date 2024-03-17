@@ -54,6 +54,12 @@ function removeRow(){
 	let grid = document.getElementById("grid");
 	let lastChild = grid.lastChild;
 	grid.removeChild(lastChild);
+	//Special case where last row emptys grid on remove
+	if(gridRows == 1){
+		for(let r=gridCols;r>1;r--){
+			removeCol();
+		}
+	}
 	gridRows--;
 	console.log(gridRows, gridCols);
 }
@@ -70,6 +76,12 @@ function removeCol(){
 		//we basically remove the last cell from each row
 		if(row.children.length >0){
 			row.removeChild(row.lastChild);
+		}
+	}
+	//Special case where last column emptys grid on remove
+	if(gridCols == 1){
+		for(let r=gridRows;r>0;r--){
+			removeRow();
 		}
 	}
 	gridCols--;
