@@ -25,3 +25,19 @@ function addRow() {
 	gridRows++;
 	console.log(gridRows, gridCols);	
 }
+
+//add column
+function addColumn() {
+	//Special case where no rows yet
+	if(gridRows==0){
+		addRow();
+		return;
+	}
+	let grid = getElementById("grid");
+	for(let x=0;x<gridRows;x++){
+		insertCell(grid.children[x]);
+	}
+	gridCols++;
+	console.log(gridRows, gridCols);
+		
+}
